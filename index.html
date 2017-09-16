@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+    #list{
+       width:260px;
+    }
+    .item{
+       width: 250px;
+       height: 20px;
+       float: left;
+       margin: 1px;
+       padding: 3px;
+       background-color: #EEEEEE;
+       list-style-type:none;
+     }
+  </style>
+</head>
+<body>
+<teble>  
+<tr>
+  <td>
+  <div id="list" class="other">
+    <a class="item">0. Меркурий </a>	
+    <a class="item">1. Венера </a>	
+    <a class="item">2. Земля </a>	
+    <a class="item">3. Марс </a>	
+    <a class="item">4. Юпитер </a>	
+    <a class="item">5. Сатурн </a>	
+    <a class="item">7. Уран </a>	
+    <a class="item">8. Нептун </a>	
+    <a class="item">9. Плутон </a>
+    </div>	
+  </td>
+  </tr>
+</teble>
+
+  
+<script src="jquery.min.js"></script>
+  <script>
+    $(function(){
+    
+    		$('#list .item:gt(2)')
+    		.hide();
+    
+    		$("<a class=\"item\" id=\"show-block\">еще(<span class=\"other-res\"></span>)</a>").insertAfter("#list :eq(2)");
+    
+    		$("#show-block").click(function() {
+    				$('#list .item:gt(2)').show();
+    				$('#show-block').hide();
+    		});
+   
+
+    
+      $(".other-res").html($("#list .item:gt(3)").length);
+    });
+  </script>
+
+</body>
+</html>
